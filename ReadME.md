@@ -4,6 +4,9 @@
 # 💻 QA Automation for AutomationExercise.com
 This is a comprehensive QA project for a sample e-commerce site, built using the Page Object Model (POM) design pattern. Covering **automated testing** using Python, Selenium WebDriver, and PyTest.
 
+## 📝AutomationExercise Test Cases
+You can find the detailed test cases here: [TestCase.md](./TestCase.md)
+
 ## 🧪 Features Covered
 ✅ Login/SignUp Page (Complete)  <br>
 ✅ Product Page (Framework Created)<br>
@@ -31,7 +34,8 @@ This is a comprehensive QA project for a sample e-commerce site, built using the
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
 ![pytest](https://img.shields.io/badge/pytest-0080FF?style=for-the-badge&logo=pytest&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-0078D7?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+
 
 ## 🚀 Run Locally
 

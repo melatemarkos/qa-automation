@@ -10,6 +10,7 @@ and login functionality of the web application.
 '''
 
 import pytest
+import allure
 import data.test_data as td
 from pages.signup_login_page import SignupLoginPage
 from pages.home_page import HomePage
@@ -17,6 +18,7 @@ from pages.home_page import HomePage
 class TestSignupLogin:
     
     # ===== Signup Tests =====
+    @allure.title("Test Case 1: Register User")
     def test_signup_new_user(self,init_driver):
 
         # 1. Launch browser
@@ -90,6 +92,7 @@ class TestSignupLogin:
         assert signUppage.is_account_deleted()
 
      # ===== Login Tests =====
+    @allure.title("Test Case 2: Login User with correct email and password")
     def test_login(self,init_driver):
         # 1. Launch browser
         loginpage = SignupLoginPage(init_driver)
