@@ -3,6 +3,9 @@
         "wrongpass"
     ],
     "cSpell.ignoreWords": [
-        "optin"
+        "dotenv",
+        "optin",
+        "signup",
+        "venv"
     ]
 }
