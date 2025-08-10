@@ -31,7 +31,7 @@
 8. Verify that 'Logged in as username' is visible
 
 
-### 🚧 Test Case 3: Login User with incorrect email and password
+### ✅ Test Case 3: Login User with incorrect email and password
 1. Launch browser
 2. Navigate to url 'http://automationexercise.com'
 3. Verify that home page is visible successfully
@@ -41,9 +41,29 @@
 7. Click 'login' button
 8. Verify error 'Your email or password is incorrect!' is visible
 
-### 🆕 Test Case 4: Logout User
-### 🆕 Test Case 5: Register User with existing email
-### 🆕 Test Case 6: Contact Us Form
+### ✅ Test Case 4: Logout User
+1. Launch browser
+2. Navigate to url 'http://automationexercise.com'
+3. Verify that home page is visible successfully
+4. Click on 'Signup / Login' button
+5. Verify 'Login to your account' is visible
+6. Enter correct email address and password
+7. Click 'login' button
+8. Verify that 'Logged in as username' is visible
+9. Click 'Logout' button
+10. Verify that user is navigated to login page
+    
+### ✅ Test Case 5: Register User with existing email
+1. Launch browser
+2. Navigate to url 'http://automationexercise.com'
+3. Verify that home page is visible successfully
+4. Click on 'Signup / Login' button
+5. Verify 'New User Signup!' is visible
+6. Enter name and already registered email address
+7. Click 'Signup' button
+8. Verify error 'Email Address already exist!' is visible
+
+### 🚧 Test Case 6: Contact Us Form
 ### 🆕 Test Case 7: Verify Test Cases Page
 ### 🆕 Test Case 8: Verify All Products and product detail page
 ### 🆕 Test Case 9: Search Product

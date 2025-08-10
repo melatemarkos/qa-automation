@@ -92,8 +92,9 @@ class TestSignupLogin:
         assert signUppage.is_account_deleted()
 
      # ===== Login Tests =====
+
     @allure.title("Test Case 2: Login User with correct email and password")
-    def test_login(self,init_driver):
+    def test_login_valid_user(self,init_driver):
         # 1. Launch browser
         loginpage = SignupLoginPage(init_driver)
 
@@ -120,7 +121,96 @@ class TestSignupLogin:
         # 8. Verify that 'Logged in as username' is visible
         assert loginpage.is_login_successful(td.VALID_NAME)
 
+    @allure.title("Test Case 3: Login User with incorrect email and password")
+    def test_login_invalid_user(self,init_driver):
+        
+        # 1. Launch browser
+        loginpage = SignupLoginPage(init_driver)
 
+        # 2. Navigate to url 'http://automationexercise.com'
+        loginpage.go_to(td.BASE_URL)
 
-    
+        # 3. Verify that home page is visible successfully
+        homepage = HomePage(init_driver)
+        assert homepage.is_logo_visible()
 
+        # 4. Click on 'Signup / Login' header button
+        loginpage.header.click_signup_login()
+
+        # 5. Verify 'Login to your account' is visible
+        assert loginpage.is_login_header_visible()
+
+        # 6. Enter incorrect email address and password
+        loginpage.enter_login_email(td.INVALID_EMAIL)
+        loginpage.enter_login_password(td.INVALID_PASSWORD)
+
+        # 7. Click 'login' button
+        loginpage.click_login()
+
+        # 8. Verify error 'Your email or password is incorrect!' is visible
+        assert loginpage.is_invalid_entry_error_message_visible()
+
+    @allure.title("Test Case 4: Logout User")
+    def test_logout_user(self,init_driver):
+
+        # 1. Launch browser
+        loginpage = SignupLoginPage(init_driver)
+        
+        # 2. Navigate to url 'http://automationexercise.com'
+        loginpage.go_to(td.BASE_URL)
+
+        # 3. Verify that home page is visible successfully
+        homepage = HomePage(init_driver)
+        assert homepage.is_logo_visible()
+
+        # 4. Click on 'Signup / Login' button
+        loginpage.header.click_signup_login()
+
+        # 5. Verify 'Login to your account' is visible
+        assert loginpage.is_login_header_visible()
+
+        # 6. Enter correct email address and password
+        loginpage.enter_login_email(td.VALID_EMAIL)
+        loginpage.enter_login_password(td.VALID_PASSWORD)
+
+        # 7. Click 'login' button
+        loginpage.click_login()
+
+        # 8. Verify that 'Logged in as username' is visible
+        assert loginpage.is_login_successful()
+
+        # 9. Click 'Logout' button
+        loginpage.header.click_logout()
+
+        # 10. Verify that user is navigated to login page
+        assert loginpage.is_login_header_visible()
+        
+    @allure.title("Test Case 5: Register User with existing email")
+    def test_register_with_existing_email(self,init_driver):
+        pass
+
+        # 1. Launch browser
+        signUp = SignupLoginPage(init_driver)
+
+        # 2. Navigate to url 'http://automationexercise.com'
+        signUp.go_to(td.BASE_URL)
+
+        # 3. Verify that home page is visible successfully
+        homepage = HomePage(init_driver)
+        assert homepage.is_logo_visible()
+
+        # 4. Click on 'Signup / Login' button
+        signUp.header.click_signup_login()
+
+        # 5. Verify 'New User Signup!' is visible
+        assert signUp.is_signup_header_visible()
+
+        # 6. Enter name and already registered email address
+        signUp.enter_name(td.EXISTING_NAME)
+        signUp.enter_signup_email(td.EXISTING_EMAIL)
+
+        # 7. Click 'Signup' button
+        signUp.click_signup()
+
+        # 8. Verify error 'Email Address already exist!' is visible
+        assert signUp.is_existing_email_error_message_visible()

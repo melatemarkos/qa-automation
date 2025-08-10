@@ -25,7 +25,9 @@ class SignupLoginPage(BasePage):
     LOGIN_PASSWORD = (By.NAME,'password')
     LOGIN_BUTTON = (By.CSS_SELECTOR,'button[data-qa="login-button"]')
     LOGIN_HEADING = (By.XPATH, "//h2[text()='Login to your account']")
-    LOGIN_MESSAGE = (By.XPATH, "//a[contains(.,'Logged in as')]")
+    LOGIN_MESSAGE_SUCCESSFUL = (By.XPATH, "//a[contains(.,'Logged in as')]")
+    INVALID_ENTRY_ERROR_MESSAGE = (By.XPATH, "//p[text()='Your email or password is incorrect!']")
+
 
     # Locators for Signup 
     NAME = (By.NAME,'name')
@@ -55,8 +57,10 @@ class SignupLoginPage(BasePage):
     ENTER_ACCOUNT_INFORMATION_HEADING = (By.XPATH, "//b[normalize-space()='Enter Account Information']")
     ACCOUNT_CREATED_HEADING = (By.XPATH, "//b[normalize-space()='Account Created!']")
     CONTINUE_BUTTON = (By.CSS_SELECTOR, "a[data-qa='continue-button']")
+    
     DELETE_ACCOUNT_LINK = (By.CSS_SELECTOR, 'a[href="/delete_account"]')
     ACCOUNT_DELETED_MSG = (By.XPATH, "//b[text()='Account Deleted!']")
+    EMAIL_ALREADY_EXISTS_ERROR = (By.XPATH, "//p[text()='Email Address already exist!']")
 
 
 
@@ -86,11 +90,18 @@ class SignupLoginPage(BasePage):
     
     def is_login_successful(self,username=None):
         try: 
-            element = self.wait.until(EC.visibility_of_element_located(self.LOGIN_MESSAGE))
+            element = self.wait.until(EC.visibility_of_element_located(self.LOGIN_MESSAGE_SUCCESSFUL))
             message = element.text
             if username:
                 expected = f"Logged in as {username}"
                 return expected in message
+            return True
+        except TimeoutException:
+            return False
+        
+    def is_invalid_entry_error_message_visible(self):
+        try:
+            self.wait.until(EC.visibility_of_element_located(self.INVALID_ENTRY_ERROR_MESSAGE))
             return True
         except TimeoutException:
             return False
@@ -107,6 +118,13 @@ class SignupLoginPage(BasePage):
     def is_enter_account_info_visible(self):
         try:
             self.wait.until(EC.visibility_of_element_located(self.ENTER_ACCOUNT_INFORMATION_HEADING))
+            return True
+        except TimeoutException:
+            return False
+        
+    def is_existing_email_error_message_visible(self):
+        try: 
+            self.wait.until(EC.visibility_of_element_located(self.EMAIL_ALREADY_EXISTS_ERROR))
             return True
         except TimeoutException:
             return False

@@ -13,6 +13,11 @@ VALID_NAME = "Test User"
 VALID_EMAIL = "testuser215@example.com"
 VALID_PASSWORD = "Test@1234"
 
+# Valid login credentials
+EXISTING_NAME = "Test User"
+EXISTING_EMAIL = "testuser215@example.com"
+EXISTING_PASSWORD = "Test@1234"
+
 # Invalid login credentials
 INVALID_NAME = "Invalid User"
 INVALID_EMAIL = "invaliduser@example.com"
