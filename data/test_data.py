@@ -19,6 +19,11 @@ EXISTING_NAME = "Test User"
 EXISTING_EMAIL = "testuser215@example.com"
 EXISTING_PASSWORD = "Test@1234"
 
+# Invalid login credentials
+INVALID_NAME = "Invalid User"
+INVALID_EMAIL = "invaliduser@example.com"
+INVALID_PASSWORD = "wrongpass"
+
 # Contact Us Test Data
 CONTACT_NAME = "Test User"
 CONTACT_EMAIL = "testuser215@example.com"
@@ -26,11 +31,6 @@ CONTACT_SUBJECT = "Test Subject"
 CONTACT_MESSAGE = "This is a test message."
 CONTACT_FILE_PATH = os.path.abspath(r"C:\Users\Melat\Documents\qa-automation\data\ContactUs_Test_File.txt")
 
-
-# Invalid login credentials
-INVALID_NAME = "Invalid User"
-INVALID_EMAIL = "invaliduser@example.com"
-INVALID_PASSWORD = "wrongpass"
 
 # Signup data
 NEW_USER_NAME = "Test User"
@@ -52,3 +52,6 @@ PHONE_NUMBER = "123-456-7890"
 CARD_NUMBER = "1234 1234 1234 1234"
 CVC = "321"
 EXPIRATION = "01/2030"
+
+# Product Search
+SEARCH_CRITERIA_PRODUCT_NAME = "Fancy Green Top"
