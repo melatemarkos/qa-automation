@@ -10,6 +10,7 @@ Selenium actions for cleaner and more maintainable test code.
 #-----------------------------------
 '''
 from pages.base_page import BasePage
+from pages.header_components import HeaderComponents
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -23,6 +24,7 @@ class HomePage(BasePage):
     # Constructor uses super() to OVERRIDE and use BasePage constructor 
     def __init__(self,driver):
         super().__init__(driver) 
+        self.header = HeaderComponents(driver)
 
     def is_logo_visible(self):
         return self.is_element_visible(self.LOGO)

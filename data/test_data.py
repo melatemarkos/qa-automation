@@ -4,6 +4,7 @@ Purpose:
 
 #-----------------------------------
 '''
+import os 
 
 # Test Data
 BASE_URL = "https://www.automationexercise.com"
@@ -17,6 +18,14 @@ VALID_PASSWORD = "Test@1234"
 EXISTING_NAME = "Test User"
 EXISTING_EMAIL = "testuser215@example.com"
 EXISTING_PASSWORD = "Test@1234"
+
+# Contact Us Test Data
+CONTACT_NAME = "Test User"
+CONTACT_EMAIL = "testuser215@example.com"
+CONTACT_SUBJECT = "Test Subject"
+CONTACT_MESSAGE = "This is a test message."
+CONTACT_FILE_PATH = os.path.abspath(r"C:\Users\Melat\Documents\qa-automation\data\ContactUs_Test_File.txt")
+
 
 # Invalid login credentials
 INVALID_NAME = "Invalid User"

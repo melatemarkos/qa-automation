@@ -5,7 +5,7 @@
 This is a comprehensive QA project for a sample e-commerce site, built using the Page Object Model (POM) design pattern. Covering **automated testing** using Python, Selenium WebDriver, and PyTest.
 
 ## 📝AutomationExercise Test Cases
-You can find the detailed test cases here: [TestCase.md](./TestCase.md)
+You can find the detailed test cases here: [TestCase.md](./TestCases.md)
 
 ## 🧪 Features Covered
 ✅ Login/SignUp Page (Complete)  <br>
