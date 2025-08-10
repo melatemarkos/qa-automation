@@ -21,6 +21,8 @@ class HeaderComponents(BasePage):
     PRODUCTS_LINK = (By.CSS_SELECTOR,'a[href="/products"]')
     CART_LINK = (By.CSS_SELECTOR,'a[href="/view_cart"]')
     CONTACT_US_LINK = (By.CSS_SELECTOR,'a[href="/contact_us"]')
+    TEST_CASES_LINK = (By.XPATH, "//a[@href='/test_cases' and contains(text(), 'Test Cases')]")
+
 
     # Constructor uses super() to OVERRIDE and use BasePage constructor 
     def __init__(self,driver):
@@ -43,3 +45,6 @@ class HeaderComponents(BasePage):
     
     def click_contact_us(self):
         self.click(self.CONTACT_US_LINK)
+
+    def click_test_cases(self):
+        self.click(self.TEST_CASES_LINK)
