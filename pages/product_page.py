@@ -34,7 +34,6 @@ class ProductPage(BasePage):
     SEARCH_PRODUCT_NAMES = (By.CSS_SELECTOR, ".productinfo p")
 
 
-
     # Constructor uses super() to OVERRIDE and use BasePage constructor 
     def __init__(self,driver):
         super().__init__(driver) 

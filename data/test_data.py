@@ -55,3 +55,6 @@ EXPIRATION = "01/2030"
 
 # Product Search
 SEARCH_CRITERIA_PRODUCT_NAME = "Fancy Green Top"
+
+# Subscription Data
+SUBSCRIPTION_EMAIL = "testuser512@example.com"
